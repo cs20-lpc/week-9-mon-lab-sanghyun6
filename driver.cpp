@@ -7,12 +7,12 @@ int main() {
 
     try {
         q.front();
-    } catch (const char* e) {
+    } catch (string& e) {
         cout << e << endl;
     }
     try {
         q.back();
-    } catch (const char* e) {
+    } catch (string& e) {
         cout << e << endl;
     }
 
@@ -22,7 +22,7 @@ int main() {
 
     try {
         q.front();
-    } catch (const char* e) {
+    } catch (string& e) {
         cout << e << endl;
     }
 

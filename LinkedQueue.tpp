@@ -1,3 +1,5 @@
+#include <string>
+
 template <typename T>
 LinkedQueue<T>::LinkedQueue() : head(nullptr), last(nullptr) {
 }
@@ -24,7 +26,7 @@ LinkedQueue<T>::~LinkedQueue() {
 template <typename T>
 T LinkedQueue<T>::back() const {
     if (isEmpty()) {
-        throw "Queue is empty";
+        throw std::string("back: error, queue is empty, cannot access the back");
     }
     return last->value;
 }
@@ -52,7 +54,7 @@ void LinkedQueue<T>::copy(const LinkedQueue<T>& copyObj) {
 template <typename T>
 void LinkedQueue<T>::dequeue() {
     if (isEmpty()) {
-        throw "Queue is empty";
+        throw std::string("Queue is empty");
     }
     Node* toDelete = head;
     head = head->next;
@@ -78,7 +80,7 @@ void LinkedQueue<T>::enqueue(const T& elem) {
 template <typename T>
 T LinkedQueue<T>::front() const {
     if (isEmpty()) {
-        throw "Queue is empty";
+        throw std::string("front: error, queue is empty, cannot access the front");
     }
     return head->value;
 }
